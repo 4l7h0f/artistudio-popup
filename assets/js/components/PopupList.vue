@@ -4,6 +4,7 @@
         <ul>
             <li v-for="popup in popups" :key="popup.id">
                 <router-link :to="`/popup/${popup.id}`">{{ popup.title }}</router-link>
+                <p>Page: <a :href="popup.page.url" target="_blank">{{ popup.page.title }}</a></p>
             </li>
         </ul>
     </div>

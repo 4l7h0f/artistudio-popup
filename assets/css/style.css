@@ -1,0 +1,102 @@
+/* Main Popup Container */
+#artistudio-popup-app {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Popup List Styles */
+#artistudio-popup-app ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#artistudio-popup-app ul li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#artistudio-popup-app ul li:hover {
+    background-color: #f1f1f1;
+}
+
+#artistudio-popup-app ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+#artistudio-popup-app ul li p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+#artistudio-popup-app ul li p a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+#artistudio-popup-app ul li p a:hover {
+    text-decoration: underline;
+}
+
+/* Popup Detail Styles */
+#artistudio-popup-app h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#artistudio-popup-app p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+#artistudio-popup-app p a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+#artistudio-popup-app p a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles (Optional) */
+#artistudio-popup-app button {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#artistudio-popup-app button:hover {
+    background-color: #005177;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #artistudio-popup-app {
+        padding: 10px;
+    }
+
+    #artistudio-popup-app h1 {
+        font-size: 20px;
+    }
+
+    #artistudio-popup-app p {
+        font-size: 14px;
+    }
+}
