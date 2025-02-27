@@ -1,33 +1,74 @@
 <?php
 namespace ArtiStudio\Popup\Frontend;
 
-use ArtiStudio\Popup\Singleton;
-
-class PopupRenderer {
-    use Singleton;
-
-    protected function __construct() {
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
-        add_action('wp_footer', [$this, 'render_popup']);
+class PopupRenderer
+{
+    public static function init()
+    {
+        add_action('wp_footer', [self::class, 'render_popup']);
     }
 
-    public function enqueue_scripts() {
-        wp_enqueue_script(
-            'artistudio-popup',
-            ARTISTUDIO_POPUP_URL . 'dist/js/app.js',
-            [],
-            '1.0',
-            true
-        );
-        wp_enqueue_style(
-            'artistudio-popup',
-            ARTISTUDIO_POPUP_URL . 'dist/css/app.css',
-            [],
-            '1.0'
-        );
+    public static function render_popup()
+    {
+        // Get the current page ID or slug
+        global $post;
+        $current_page = $post ? $post->ID : '';
+
+        // Fetch all popups
+        $popups = get_posts([
+            'post_type' => 'artistudio_popup',
+            'numberposts' => -1,
+        ]);
+
+        // Filter popups for the current page
+        foreach ($popups as $popup) {
+            $popup_page = get_post_meta($popup->ID, '_artistudio_popup_page', true);
+
+            // Check if the popup should be displayed on the current page
+            if ($popup_page == $current_page || $popup_page == $post->post_name) {
+                self::display_popup($popup);
+            }
+        }
     }
 
-    public function render_popup() {
-        echo '<div id="artistudio-popup"></div>';
+    private static function display_popup($popup)
+    {
+        ?>
+        <div id="artistudio-popup" class="popup">
+            <div class="popup-content">
+                <h2><?php echo esc_html($popup->post_title); ?></h2>
+                <div><?php echo wp_kses_post($popup->post_content); ?></div>
+                <button class="close-popup">Close</button>
+            </div>
+        </div>
+        <style>
+            .popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .close-popup {
+                margin-top: 10px;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const closeButton = document.querySelector('.close-popup');
+                const popup = document.querySelector('.popup');
+
+                if (closeButton && popup) {
+                    closeButton.addEventListener('click', function () {
+                        popup.style.display = 'none';
+                    });
+                }
+            });
+        </script>
+        <?php
     }
 }

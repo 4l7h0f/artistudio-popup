@@ -1,17 +1,31 @@
-
 {
   "name": "artistudio-popup",
-  "version": "0.1.0",
-  "main": "Gruntfile.js",
-  "author": "Muhamad Arief Rachman",
-  "scripts" : {
-    "start" : "grunt default" ,
-    "readme" : "grunt readme",
-    "i18n" : "grunt i18n"
+  "version": "1.0.0",
+  "description": "A WordPress plugin starter with Vue JS",
+  "author": "althof freelancer <althof.freelancer@gmail.com>",
+  "license": "GPLv3",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-wp-i18n": "~0.5.0",
-    "grunt-wp-readme-to-markdown": "~1.0.0"
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^6.0.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.85.1",
+    "sass-loader": "^8.0.2",
+    "vue-loader": "^17.3.1",
+    "vuex": "^4.0.0"
   }
 }

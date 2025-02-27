@@ -1,5 +1,5 @@
 <?php
-namespace ArtiStudio\Popup;
+namespace ArtiStudio\Popup\Traits;
 
 trait Singleton {
     private static $instance;
@@ -13,5 +13,5 @@ trait Singleton {
 
     private function __construct() {}
     private function __clone() {}
-    private function __wakeup() {}
+    public function __wakeup() {} // Changed to public
 }
