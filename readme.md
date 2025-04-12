@@ -23,7 +23,42 @@ cd artistudio-popup
 ### 2. Install PHP Dependencies
 
 ```bash
-git clone https://github.com/your-username/artistudio-popup.git
-cd artistudio-popup
+composer install
 ```
+### 3. Install JavaScript Dependencies
 
+```bash
+npm install
+```
+### 4. Build Assets
+For development with live reload:
+```bash
+npm run dev
+```
+For production:
+```bash
+npm run build
+```
+### 5. Set Up in WordPress
+
+- Copy or symlink the plugin directory into your wp-content/plugins/ folder.
+- Activate the plugin from the WordPress admin.
+- Use the [artistudio_popup] shortcode to render popups.
+
+## 💡 Plugin Usage
+
+- Create popups under Popups > Add New
+- Use [artistudio_popup] shortcode in posts/pages
+- Popups are dynamically fetched via REST API
+
+## 📦 Requirements
+
+- PHP 8.2 or higher
+- Node.js v20 or higher
+- WordPress 6.5.4 or higher
+- Composer 2+
+- NPM 8+
+
+## 📄 License
+GPLv2 or later
+https://www.gnu.org/licenses/gpl-2.0.html
