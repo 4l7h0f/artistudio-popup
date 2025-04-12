@@ -2,7 +2,7 @@
 Contributors: M. Arief Rachman
 Tags: popup, modal, vue.js, wordpress popup
 Requires at least: WordPress 5.6
-Tested up to: WordPress 6.5
+Tested up to: WordPress 6.5.4
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -76,9 +76,3 @@ Yes! The shortcode works with most page builders like Elementor and WP Bakery.
 == Upgrade Notice ==
 
 N/A - Initial release
-
-== Roadmap ==
-- Add popup display conditions
-- Include animation options
-- Add support for custom fields
-- Implement A/B testing
