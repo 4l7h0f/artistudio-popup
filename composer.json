@@ -1,0 +1,16 @@
+{
+  "name": "althof/artistudio-popup",
+  "description": "A Wordpress plugin using vue",
+  "autoload": {
+    "psr-4": {
+      "ArtiStudio\\Popup\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "4l7h0f",
+      "email": "althof.freelancer@gmail.com"
+    }
+  ],
+  "require": {}
+}

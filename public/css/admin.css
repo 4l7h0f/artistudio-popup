@@ -1,0 +1,23 @@
+#artistudio-popup-admin {
+  padding: 20px;
+}
+#artistudio-popup-admin nav {
+  margin-bottom: 20px;
+}
+#artistudio-popup-admin nav a {
+  margin-right: 10px;
+}
+#artistudio-popup-admin table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#artistudio-popup-admin table th,
+#artistudio-popup-admin table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#adminmenu .wp-submenu li.current a {
+  color: #fff;
+  font-weight: bold;
+}
